@@ -1,14 +1,19 @@
 const connection = require("../../Modal/dbConnect");
+const {emailfunction} = require('../nodeMailer/nodemailer.js')
 
 const postemployee = (req, res) => {
     const sqlQuery = "INSERT INTO emp SET ?";
+    const email = req.body.email;
     const data = req.body;
+    console.log(email)
     connection.query(sqlQuery, [data], (err, result) => {
         if (err) {
-            res.status(500).send("err", err.sqlMessage)
+            res.send(err.sqlMessage)
         }
         else {
             res.status(200).send(result)
+            // here call node mailer function 
+            emailfunction(email)
         }
     })
 }

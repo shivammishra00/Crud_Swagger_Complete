@@ -6,7 +6,7 @@ const app = express();
 const swaggerui = require('swagger-ui-express');
 const swaggerjsdoc = require('swagger-jsdoc')
 
-// create object first off all //
+//== create object first off all ==//
 const options = {
     definition : {
         openai: "3.0.0",   ///swaggr version
@@ -40,7 +40,7 @@ dotenv.config();
 /////////route ka use kiya gay hai /////////////////
 
 const empRouter = require('./Route/empRoute/empRoute.js')
-app.use("/", empRouter)
+app.use("/api/admin", empRouter)
 
 /////////////////////////////////////////////////////
 

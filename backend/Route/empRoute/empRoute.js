@@ -26,7 +26,7 @@ const {postemployee,getUser,updateUser} = require("../../Controller/empControlle
 
 /**
  * @swagger
- * /showuser:
+ * /api/admin/showuser:
  *      get:
  *          summary: node js api for get method 
  *          description: node js api for get method 
@@ -41,8 +41,8 @@ const {postemployee,getUser,updateUser} = require("../../Controller/empControlle
  *                                        $ref: '#/components/schemas/emp'
  */
 
-empRouter.post("/adduser", postemployee)
 empRouter.get("/showuser", getUser)
+empRouter.post("/adduser", postemployee)
 empRouter.put("/updateuser/:id", updateUser)
 
 module.exports = empRouter
