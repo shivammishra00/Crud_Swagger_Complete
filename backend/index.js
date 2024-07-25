@@ -9,10 +9,11 @@ const swaggerjsdoc = require('swagger-jsdoc')
 //== create object first off all ==//
 const options = {
     definition : {
-        openai: "3.0.0",   ///swaggr version
+        openapi: "3.0.0",   ///swaggr version
         info: {
             title: "Nodejs api documentation for mysql",
-            version : "1.0.0"
+            version : "1.0.0",
+            description: 'A simple Express Employee API'
         },
         servers: [    ///aapka server kis url me chal raha hai 
             {
